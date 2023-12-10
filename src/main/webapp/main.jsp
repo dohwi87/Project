@@ -52,11 +52,12 @@
       out.println("<p><button class=\"w-btn w-btn-skin\" onclick=\"location.href='genre_selection.jsp'\">장르 선택</button></p>");
       
       out.println("<p><button class=\"w-btn w-btn-skin\" onclick=\"location.href='logout.jsp'\">로그아웃</button></p>");
+      out.println("<p><button class=\"w-btn w-btn-skin\" onclick=\"location.href='inquiry.jsp'\">문의하기</button></p>");
     } else {
       out.println("<p><button class=\"w-btn w-btn-skin\" onclick=\"location.href='register.jsp'\">회원가입</button></p>");
     }
     %>
   </center>
 </body>
-</html>//
+</html>
 

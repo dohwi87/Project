@@ -19,5 +19,5 @@
  	%>
      </center>
 </body>
-</html>//
+</html>
 

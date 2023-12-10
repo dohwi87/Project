@@ -39,6 +39,6 @@
     %>
   </center>
 </body>
-</html>//
+</html>
 
 

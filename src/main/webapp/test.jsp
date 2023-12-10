@@ -1,18 +1,21 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
 	<center>
-    <h1>ÀÔ·ÂÇÑ ±Û</h1>
+    <h1>ìž…ë ¥í•œ ê¸€</h1>
     <p>
-      <% String content = request.getParameter("content"); %>
+      <% 
+      request.setCharacterEncoding("utf-8"); 
+      String content = request.getParameter("content"); 
+      %>
       <%= content %>
     </p>
   </center>
 </body>
-</html>//
+</html>

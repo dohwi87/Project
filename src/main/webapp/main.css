@@ -19,7 +19,7 @@ button {
     transition: 0.25s;
 }
 .w-btn-skin {
-    background-color: #f8e6e0;
+    background-color: rgb(255, 255, 128);
     color: #6e6e6e;
 }
 
@@ -86,11 +86,79 @@ button {
     .text {
   width: 500px;
   height: 100px;
-  font-size: 30px;
-  font-family: 'Nanum Pen Script', cursive;
+  font-size: 20px;
+  font-family: '돋움체';
   border: 0;
   border-radius: 15px;
   outline: none;
   padding-left: 10px;
   background-color: rgb(233, 233, 233);
-}//
+}
+    .genre-button {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border: 2px solid #000;
+      border-radius: 5px;
+      margin: 10px;
+      text-align: center;
+      line-height: 100px;
+      font-size: 23px;
+      font-family: 'Nanum Brush Script', cursive;
+      cursor: pointer;
+    }
+
+    .genre-button.selected {
+      background-color: rgb(255,255,118);
+      color: #000;
+    }
+    .genre-button:hover {
+    letter-spacing: 2px;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+    .scale-up-hor-right {
+      -webkit-animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+              animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    }
+    .tracking-in-expand-fwd {
+      -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+              animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+      font-size: 3em;
+       
+    }
+    
+    @keyframes scale-up-hor-right {
+      0% {
+        -webkit-transform: scaleX(0.4);
+                transform: scaleX(0.4);
+        -webkit-transform-origin: 100% 100%;
+                transform-origin: 100% 100%;
+      }
+      100% {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1);
+        -webkit-transform-origin: 100% 100%;
+                transform-origin: 100% 100%;
+      }
+    }
+    @keyframes tracking-in-expand-fwd {
+      0% {
+        letter-spacing: -0.5em;
+        -webkit-transform: translateZ(-700px);
+                transform: translateZ(-700px);
+        opacity: 0;
+        
+      }
+      40% {
+        opacity: 0.6;
+        
+      }
+      100% {
+        -webkit-transform: translateZ(0);
+                transform: translateZ(0);
+        opacity: 1;
+       
+      }
+      
+    }

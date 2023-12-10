@@ -6,24 +6,11 @@
 <head>
   <title>장르 선택</title>
   <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
   <style>
-    .genre-button {
-      display: inline-block;
-      width: 100px;
-      height: 100px;
-      border: 2px solid #000;
-      border-radius: 5px;
-      margin: 10px;
-      text-align: center;
-      line-height: 100px;
-      font-size: 18px;
-      cursor: pointer;
-    }
 
-    .genre-button.selected {
-      background-color: #000;
-      color: #fff;
-    }
   </style>
   <script>
     function selectGenre(button) {
@@ -62,7 +49,7 @@
 </head>
 <body>
   <center>
-    <h1>장르 선택</h1>
+    <h1 class = "text_font_1" >장르 선택</h1>
     <div>
       <div class="genre-button" onclick="selectGenre(this)">SF</div>
       <div class="genre-button" onclick="selectGenre(this)">공포</div>
@@ -81,4 +68,4 @@
     </form>
   </center>
 </body>
-</html>//
+</html>

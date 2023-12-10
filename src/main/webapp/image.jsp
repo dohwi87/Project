@@ -7,56 +7,7 @@
   <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
-  <style>
-    .scale-up-hor-right {
-      -webkit-animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-              animation: scale-up-hor-right 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
-    }
-    .tracking-in-expand-fwd {
-      -webkit-animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-              animation: tracking-in-expand-fwd 0.8s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-      font-size: 3em;
-    }
-    @font-face {
-      font-family: 'Cafe24Oneprettynight';
-      src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-    }
-    
-    @keyframes scale-up-hor-right {
-      0% {
-        -webkit-transform: scaleX(0.4);
-                transform: scaleX(0.4);
-        -webkit-transform-origin: 100% 100%;
-                transform-origin: 100% 100%;
-      }
-      100% {
-        -webkit-transform: scaleX(1);
-                transform: scaleX(1);
-        -webkit-transform-origin: 100% 100%;
-                transform-origin: 100% 100%;
-      }
-    }
-    @keyframes tracking-in-expand-fwd {
-      0% {
-        letter-spacing: -0.5em;
-        -webkit-transform: translateZ(-700px);
-                transform: translateZ(-700px);
-        opacity: 0;
-      }
-      40% {
-        opacity: 0.6;
-      }
-      100% {
-        -webkit-transform: translateZ(0);
-                transform: translateZ(0);
-        opacity: 1;
-      }
-    }
-    
-  </style>
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet">
   <script>
     function toggleImageVisibility() {
       var image = document.getElementById("image");
@@ -92,7 +43,7 @@
     String url = "jdbc:mysql://localhost:3306/wptest";
     String username = "root";
     String password = "0000";
-    String genre = request.getParameter("genre");
+    String genre= request.getParameter("genre");
     try {
       // MySQL 드라이버 로드
       Class.forName("com.mysql.jdbc.Driver");
@@ -110,34 +61,32 @@
         String imagePath = rs.getString("image_path");
         String description = rs.getString("description");
         // 이미지와 설명 출력
-        
         %>
         <div id="imageAndText">
           <img id="image" src="<%= imagePath %>" alt="<%= description %>" class="scale-up-hor-right">
-          <p id="text" class="tracking-in-expand-fwd text_font_1"><%= description %></p>
+          <p id="text" class="tracking-in-expand-fwd" style="font-family: 'Nanum Brush Script', cursive;"><%= description %></p>
         </div>
         <button class="w-btn w-btn-skin" id="toggleImageButton" onclick="toggleImageVisibility()" >사진 숨기기</button>
         <button class="w-btn w-btn-skin" id="toggleTextButton" onclick="toggleTextVisibility()">글 숨기기</button>
         <div id="formContainer">
-          <form action="test.jsp" method="post">
+          <form action="genre_selection-db.jsp" method="post">
+          <input type="hidden" name="genre" value=<%=genre %>>
             <table border="0">
               <tr>
-                <td>글 내 용 :</td>
+                <td class = "text_font_1" style="font-size: 25px;">글 내 용 </td>
                 <td><textarea name="content" cols="100" rows="6" class = "text"></textarea></td>
               </tr>
             </table>
             <br><br>
             <tr>
+              
               <button class="w-btn w-btn-skin" type="submit">등록하기</button>
               <button class="w-btn w-btn-skin" type="reset">다시쓰기</button>
             </tr>
           </form>
         </div>
-        
-
         <% 
-      }
-      
+      }      
       // 연결 종료
       rs.close();
       stmt.close();
@@ -149,9 +98,4 @@
     %>
   </center>
 </body>
-</html>//
-
-
-
-
-
+</html>
